@@ -1,0 +1,30 @@
+{
+  "name": "l5r",
+  "title": "Legend of the Five Rings",
+  "description": "System for FFG's Legend of the Five Rings (5E).",
+  "version": "0.1.0",
+  "author": "L4D15#2706",
+  "authors": [
+    {
+      "name": "Ladislao Lainez",
+      "email": "thedragonladis@gmail.com",
+      "url": "https://github.com/L4D15"
+    }
+  ],
+  "scripts": [],
+  "esmodules": ["l5r.js"],
+  "styles": ["l5r.css"],
+  "packs": [],
+  "languages": ["en", "es"],
+  "gridDistance": 1,
+  "gridUnits": "",
+  "minimumCoreVersion": "0.5.0",
+  "compatibleCoreVersion": "0.5.0",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "",
+  "readme": "",
+  "bugs": "",
+  "changelog": ""
+}
