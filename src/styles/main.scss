@@ -9,7 +9,7 @@
   overflow-y: hidden;
 }
 .l5r .sheet-header {
-  height: 100px;
+  height: 140px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -61,8 +61,16 @@
   text-decoration: underline;
   text-shadow: none;
 }
+
+.l5r .window-content form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .l5r .sheet-body {
   overflow: hidden;
+  height: 100%;
 }
 .l5r .sheet-body .tab {
   height: 100%;
