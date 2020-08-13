@@ -1,0 +1,41 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+            <div class="resource">
+            	<label>{{ localize 'L5R.Quantity' }}</label>
+                <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+            </div>
+            <div class="resource">
+            	<label>{{ localize 'L5R.Weight' }}</label>
+                <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab" data-group="primary" data-tab="description">
+            <div class="weapon-stats-content">
+                <div>
+                    <label class="attribute-label">{{ localize 'L5R.Damage' }}</label>
+                    <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div>
+                    <label class="attribute-label">{{ localize 'L5R.Range' }}</label>
+                    <input type="text" name="data.range" value="{{data.range}}" data-dtype="Number" placeholder="0"/>
+                </div>
+            </div>
+            <h4 class="text-block-header">{{ localize  'L5R.Properties' }}</h4>
+            {{editor content=data.properties target="data.properties" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+</form>

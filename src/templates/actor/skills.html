@@ -1,0 +1,5 @@
+<div class="skills-wrapper">
+    {{#each data.skills as |category id|}}
+        {{> systems/l5r/templates/actor/skill-category.html category=category categoryId=id}}
+    {{/each}}
+</div>

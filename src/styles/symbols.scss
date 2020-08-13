@@ -1,0 +1,65 @@
+@font-face {
+    font-family: l5r-font;
+    src: url("./fonts/l5r-rpg-font.ttf");
+  }
+  
+  .ring {
+    background-size: 56px 56px;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  .earthring {
+    margin-right:8px;
+    background-color:#6d9977;
+    background-image: url('../assets/icons/earth.png');   
+  }
+  
+  .firering {
+    margin-left:0px; 
+    margin-top:4px; 
+    margin-right:0px;
+    background-color:#94734e;
+    background-image: url('../assets/icons/fire.png');   
+  }
+  
+  .waterring {
+    margin-right:0px; 
+    margin-top:4px;  
+    background-color:#64919c;
+    background-image: url('../assets/icons/water.png'); 
+  }
+  
+  .airring {
+    margin-right:0px; 
+    background-color:#8d7a99;
+    background-image: url('../assets/icons/air.png'); 
+  }
+  
+  .voidring {
+    margin-left:-5px; 
+    margin-top:42px; 
+    margin-right:-5px; 
+    background-color:#42413f;
+    background-image: url('../assets/icons/void.png'); 
+  }
+  
+  i.strife, i.success, i.explosive, i.opportunity, i.d6, i.d12, 
+  i.i_earth, i.i_water, i.i_fire, i.i_air, i.i_void {
+    font-family: l5r-font;
+    line-height: 8px;
+    font-style: normal;
+    font-weight: normal;
+    vertical-align:middle;
+  }
+  
+  i.strife:before      { content: "f"; }
+  i.success:before     { content: "s"; }
+  i.explosive:before   { content: "e"; }
+  i.opportunity:before { content: "o"; }
+  i.d6:before          { content: "r"; }
+  i.d12:before         { content: "k"; }
+  i.i_earth:before       { content: "g"; }
+  i.i_water:before       { content: "w"; }
+  i.i_fire:before        { content: "i"; }
+  i.i_air:before         { content: "a"; }
+  i.i_void:before        { content: "v"; }

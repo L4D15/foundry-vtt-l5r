@@ -1,0 +1,15 @@
+<div class="feats-wrapper">
+    <div class="section-header flexrow">
+        <h4 style="margin: 0; font-weight: bold;">{{ localize 'L5R.Feats' }}</h4>
+        <div class="feat-controls">
+            <a class="feat-control feat-add" title="Add Item"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+    <ul class="item-list">
+        {{#each actor.items as |item id|}}
+            {{#if item.isFeat }}
+                {{> systems/l5r/templates/item/feat-entry.html feat=item }}
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>

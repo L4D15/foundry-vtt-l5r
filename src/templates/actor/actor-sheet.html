@@ -1,0 +1,102 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="header-rings">
+                <div id="earth">
+                    <label class="attribute-label earth centered-input"><i class="i_earth"></i> {{ localizeRing 'earth' }}</label>
+                    <input class="centered-input" type="text" name="data.rings.earth" value="{{data.rings.earth}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div  id="air">
+                    <label class="attribute-label air centered-input"><i class="i_air"></i> {{ localizeRing 'air' }}</label>
+                    <input class="centered-input" type="text" name="data.rings.air" value="{{data.rings.air}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div  id="water">
+                    <label class="attribute-label water centered-input"><i class="i_water"></i> {{ localizeRing 'water' }}</label>
+                    <input class="centered-input" type="text" name="data.rings.water" value="{{data.rings.water}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div id="fire">
+                    <label class="attribute-label fire centered-input"><i class="i_fire"></i> {{ localizeRing 'fire' }}</label>
+                    <input class="centered-input" type="text" name="data.rings.fire" value="{{data.rings.fire}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div id="void">
+                    <label class="attribute-label void centered-input"><i class="i_void"></i> {{ localizeRing 'void' }}</label>
+                    <input class="centered-input" type="text" name="data.rings.void" value="{{data.rings.void}}" data-dtype="Number" placeholder="0"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="narrative"> {{ localize "L5R.Narrative" }}</a>
+        <a class="item" data-tab="skills"> {{ localize "L5R.Skills.Title" }}</a>
+        <a class="item" data-tab="conflict"> {{ localize 'L5R.Conflict.Title' }}</a>
+        <a class="item" data-tab="inventory"> {{ localize 'L5R.Inventory' }}</a>
+        <a class="item" data-tab="experience"> {{ localize 'L5R.Experience' }}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        {{!-- Narrative Tab --}}
+        <div class="tab narrative" data-group="primary" data-tab="narrative">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div class="identity-wrapper">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div>
+                            <label class="attribute-label">{{ localize 'L5R.Clan' }}</label>
+                            <input type="text" name="data.identity.clan" value="{{data.identity.clan}}"/>
+                        </div>
+                        <div>
+                            <label class="attribute-label">{{ localize 'L5R.Family' }}</label>
+                            <input type="text" name="data.identity.family" value="{{data.identity.family}}"/>
+                        </div>
+                        <div>
+                            <label class="attribute-label">{{ localize 'L5R.School' }}</label>
+                            <input type="text" name="data.identity.school" value="{{data.identity.school}}"/>
+                        </div>
+                        <div>
+                            <label class="attribute-label">{{ localize 'L5R.SchoolRank' }}</label>
+                            <input type="text" name="data.identity.school_rank" value="{{data.identity.school_rank}}" data-dtype="Number" placeholder="0"/>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Roles' }}</label>
+                        <input type="text" name="data.identity.roles" value="{{data.identity.roles}}"/>
+                    </div>
+                </div>
+                <div class="narrative-wrapper">
+                    {{> systems/l5r/templates/actor/social-standing.html}}
+                </div>
+            </div>
+            <h4 class="text-block-header">{{ localize 'L5R.Notes' }}</h4>
+            {{ editor content=data.notes.value target="data.notes.value" button=true editable=editable  }}
+        </div>
+
+        {{!-- Skills Tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                {{> systems/l5r/templates/actor/skills.html }}
+                {{> systems/l5r/templates/actor/feats.html }}
+            </div>
+        </div>
+
+        {{!-- Conflict Tab --}}
+        <div class="tab conflict" data-group="primary" data-tab="conflict">
+            {{> systems/l5r/templates/actor/conflict.html }}
+        </div>
+
+        <div class="tab narrative" data-group="primary" data-tab="inventory">
+            {{> systems/l5r/templates/item/items.html }}
+        </div>
+
+        {{!-- Experience Tab --}}
+        <div class="tab experience" data-group="primary" data-tab="experience">
+
+        </div>
+    </section>
+</form>
+

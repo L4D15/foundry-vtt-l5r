@@ -1,0 +1,70 @@
+<div class="conflict-wrapper">
+    <div class="conflict-top-content">
+        <div class="conflict-stats-content">
+            <div>
+                <div class="endurance-content">
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Endurance' }}</label>
+                        <input class="centered-input" type="text" name="data.endurance" value="{{data.endurance}}" data-dtype="Number" disabled/>
+                    </div>
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Fatigue' }}</label>
+                        <input class="centered-input" type="text" name="data.fatigue" value="{{data.fatigue}}" data-dtype="Number"/>
+                    </div>
+                </div>
+                <p class="quick-rules"> {{ localize 'L5R.Conflict.EnduranceTip' }}</p>
+            </div>
+            <div>
+                <div class="composure-content">
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Composure' }}</label>
+                        <input class="centered-input" type="text" name="data.composure" value="{{data.composure}}" data-dtype="Number" disabled/>
+                    </div>
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Strife' }}</label>
+                        <input class="centered-input" type="text" name="data.strife" value="{{data.strife}}" data-dtype="Number"/>
+                    </div>
+                </div>
+                <p class="quick-rules"> {{ localize 'L5R.Conflict.ComposureTip' }}</p>
+            </div>
+            <div>
+                <div class="focus-content">
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Focus' }}</label>
+                        <input class="centered-input" type="text" name="data.focus" value="{{data.focus}}" data-dtype="Number" disabled/>
+                    </div>
+                </div>
+                <p class="quick-rules"> {{ localize 'L5R.Conflict.FocusTip' }}</p>
+            </div>
+            <div>
+                <div class="vigilante-content">
+                    <div>
+                        <label class="attribute-label">{{ localize 'L5R.Conflict.Vigilante' }}</label>
+                        <input class="centered-input" type="text" name="data.vigilante" value="{{data.vigilante}}" data-dtype="Number" disabled/>
+                    </div>
+                </div>
+                <p class="quick-rules"> {{ localize 'L5R.Conflict.VigilanteTip' }}</p>
+            </div>
+            <div>
+                <div class="void-points-content">
+                    <div>
+                        <label class="attribute-label"> {{ localize 'L5R.Conflict.VoidPoints' }}</label>
+                        <input class="centered-input" type="text" name="data.void_points.current" value="{{data.void_points.current}}" data-dtype="Number"/>
+                    </div>
+                    <div>
+                        <label class="attribute-label"> {{ localize 'L5R.Max' }}</label>
+                        <input class="centered-input" type="text" name="data.void_points.max" value="{{data.void_points.max}}" data-dtype="Number" disabled/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conflict-stances-content">
+            <h4 class="section-header">{{ localize 'L5R.Conflict.Stance' }}</h4>
+            {{#each data.stances as |stance stanceId|}}
+                {{> systems/l5r/templates/actor/stance.html stance=stance stanceId=stanceId }}
+            {{/each}}
+        </div>
+        {{> systems/l5r/templates/item/weapons.html }}
+        </div>
+    </div>
+</div>

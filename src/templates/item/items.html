@@ -1,0 +1,9 @@
+<div class="items-content">
+    <ul class="item-list">
+        {{#each actor.items as |item id|}}
+        {{#if item.isEquipment }}
+            {{> systems/l5r/templates/item/item-entry.html item=item id=id }}
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>

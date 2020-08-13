@@ -1,0 +1,13 @@
+<li class="feat flexcolumn" data-feat-id="{{feat._id}}">
+    <div class="feat-header">
+        <img src="{{feat.img}}" title="{{feat.name}}" width="32px" height="32px"/>
+        <h4 class="feat-name">{{ feat.name }}</h4>
+        <div class="feat-controls" style="margin-left: auto;">
+            <a class="feat-control feat-edit" title="Edit Feat"><i class="fas fa-edit"></i></a>
+            <a class="faet-control feat-delete" title="Delete Feat"><i class="fas fa-trash"></i></a>
+        </div>
+    </div>
+    <div class="feat-description">
+        {{{ feat.data.description }}}
+    </div>
+</li>

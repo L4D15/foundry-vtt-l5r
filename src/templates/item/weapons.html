@@ -1,0 +1,10 @@
+<div class="weapons-content">
+    <h4 class="section-header">{{ localize 'L5R.Weapons' }}</h4>
+    <ul class="item-list">
+        {{#each actor.items as |item id|}}
+            {{#if item.isWeapon }}
+                {{> systems/l5r/templates/item/weapon-entry.html item=item id=id }}
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
