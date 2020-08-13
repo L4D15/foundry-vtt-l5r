@@ -1,0 +1,16 @@
+<li class="item flexrow" data-item-id="{{item._id}}" style="height: auto !important; align-items: center;">
+    <img src="{{item.img}}" title="{{item.name}}" width="32px" height="32px"/>
+    <h4 class="item-name">{{ item.name }}</h4>
+    <div class="icon-stat-container">
+        <i class="fas fa-certificate"></i>
+        <span class="centered-input" style="width: 32px;">{{item.data.damage}}</span>
+    </div>
+    <div class="icon-stat-container">
+        <i class="fas fa-arrows-alt-h"></i>
+        <span class="centered-input" style="width: 32px;">{{item.data.range}}</span>
+    </div>
+    <div class="item-controls">
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+    </div>
+</li>

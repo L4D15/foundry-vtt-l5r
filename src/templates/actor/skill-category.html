@@ -1,0 +1,17 @@
+<div class="skill-category-wrapper">
+    <h4 class="section-header">{{ localizeSkillCategory categoryId }}</h4>
+    <div class="skill-category-content">
+        <div class="skill-category-skills-list">
+            {{#each category as |skill id| }}
+                {{> systems/l5r/templates/actor/skill.html categoryId=../categoryId skill=skill skillId=id }}
+            {{/each}}
+        </div>
+        <div class="skill-category-ring-actions">
+            <label name="air" class="air"><i class="i_air"></i> {{ localizeSkill categoryId 'air' }} </label>
+            <label name="earth" class="earth"><i class="i_earth"></i> {{ localizeSkill categoryId 'earth' }} </label>
+            <label name="fire" class="fire"><i class="i_fire"></i> {{ localizeSkill categoryId 'fire' }} </label>
+            <label name="water" class="water"><i class="i_water"></i> {{ localizeSkill categoryId 'water' }} </label>
+            <label name="void" class="void"><i class="i_void"></i> {{ localizeSkill categoryId 'void' }} </label>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ const ts = require('gulp-typescript');
 const less = require('gulp-less');
 const sass = require('gulp-sass');
 const git = require('gulp-git');
+const { link } = require('fs');
 
 const argv = require('yargs').argv;
 
@@ -341,6 +342,11 @@ async function copyUserData() {
 			linkDir = path.join(config.dataPath, 'Data', destDir, name);
 		} else {
 			throw Error('No User Data path defined in foundryconfig.json');
+		}
+
+		if (fs.existsSync(linkDir)) {
+			console.log(chalk.white(`Removing ${chalk.blueBright(linkDir)}`));
+			await fs.rmdir(linkDir, { recursive: true });
 		}
 
 		if (argv.clean || argv.c) {
