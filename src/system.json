@@ -35,7 +35,7 @@
   "manifest": "https://raw.githubusercontent.com/L4D15/foundry-vtt-l5r/master/src/system.json",
   "download": "https://github.com/L4D15/foundry-vtt-l5r/archive/master.zip",
   "license": "",
-  "readme": "",
+  "readme": "https://raw.githubusercontent.com/L4D15/foundry-vtt-l5r/master/README.md",
   "bugs": "",
-  "changelog": ""
+  "changelog": "https://raw.githubusercontent.com/L4D15/foundry-vtt-l5r/master/CHANGELOG.md"
 }
