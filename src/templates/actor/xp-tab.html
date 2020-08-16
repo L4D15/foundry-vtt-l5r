@@ -21,9 +21,6 @@
             <h4 class="rank">{{ localize 'L5R.Rank' }}</h4>
         </header>
 
-        {{ log 'HTML Feats: '}}
-        {{ log data.feats }}
-
         {{#each data.feats as |feat featId| }}
             {{> systems/l5r/templates/actor/xp-adquisition-entry.html adquisition=feat }}
         {{/each}}

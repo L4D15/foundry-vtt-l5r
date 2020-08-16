@@ -1,9 +1,8 @@
-import { L5RActorData} from "./actor-data";
 
 /**
 * Extends the actor to process special things from L5R.
 */
-export class L5RActor extends Actor<L5RActorData> {
+export class L5RActor extends Actor {
     
     prepareData() {
         super.prepareData();

@@ -1,7 +1,5 @@
-import { L5RActor } from "./actor";
-import { L5RActorData } from "./actor-data";
 
-export class L5RActorSheet extends ActorSheet<L5RActorData, L5RActor> {
+export class L5RActorSheet extends ActorSheet {
     
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
@@ -20,10 +18,8 @@ export class L5RActorSheet extends ActorSheet<L5RActorData, L5RActor> {
         this._prepareItems(sheetData);
 
         const feats = sheetData.items.filter((item) => item.type === "feat");
-        sheetData.data.feats = feats;
 
-        console.log("Feats in data: ");
-        console.log(sheetData.data.data.feats);
+        sheetData.data.feats = feats;
         
         return sheetData;
     }
