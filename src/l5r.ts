@@ -27,7 +27,8 @@ Hooks.once('init', async function() {
 	console.log('l5r | Initializing l5r');
 	
 	// Assign custom classes and constants here
-	CONFIG.Actor.entityClass = L5RActor;
+	//CONFIG.Actor.entityClass = L5RActor;
+	//CONFIG.Actor.sheetClasses = L5RActorSheet;
 	CONFIG.Item.entityClass = L5RItem;
 	
 	// Register custom system settings

@@ -1,149 +1,153 @@
+$short-attribute-width: 64px;
+$attributes-margin: 4px;
+
+
 .l5r {
-  /* Sheet Tabs */
-  /* Items List */
-  /* Attributes */
+    /* Sheet Tabs */
+    /* Items List */
+    /* Attributes */
 }
 .l5r .window-content {
-  height: 100%;
-  padding: 5px;
-  overflow-y: hidden;
+    height: 100%;
+    padding: 5px;
+    overflow-y: hidden;
 }
 .l5r .sheet-header {
-  height: 140px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 .l5r .sheet-header .profile-img {
-  flex: 0 0 100px;
-  height: 100px;
-  margin-right: 10px;
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
 }
 .l5r .sheet-header .header-fields {
-  flex: 1;
-  height: 100px;
+    flex: 1;
+    height: 100px;
 }
 .l5r .sheet-header h1.charname {
-  height: 48px;
-  padding: 0px;
-  margin: 5px 0;
-  border-bottom: 0;
+    height: 48px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
 }
 .l5r .sheet-header h1.charname input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 .l5r .resource {
-  width: 50%;
-  height: 40px;
-  margin-top: 10px;
-  float: left;
-  text-align: center;
+    width: 50%;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
 }
 .l5r .resource input {
-  width: 100px;
-  height: 28px;
+    width: 100px;
+    height: 28px;
 }
 .l5r .tabs {
-  height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
+    height: 40px;
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
 }
 .l5r .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
+    line-height: 40px;
+    font-weight: bold;
 }
 .l5r .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
+    text-decoration: underline;
+    text-shadow: none;
 }
 
 .l5r .window-content form {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .l5r .sheet-body {
-  overflow: hidden;
-  height: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 .l5r .sheet-body .tab {
-  height: 100%;
-  overflow-y: auto;
+    height: 100%;
+    overflow-y: auto;
 }
 .l5r .editor,
 .l5r .editor-content {
-  height: 100%;
+    height: 100%;
 }
 .l5r .item-list {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-  overflow-y: auto;
+    list-style: none;
+    margin: 7px 0;
+    padding: 0;
+    overflow-y: auto;
 }
 .l5r .item-list .item {
-  height: 30px;
-  line-height: 24px;
-  padding: 3px 0;
-  border-bottom: 1px solid #BBB;
+    height: 30px;
+    line-height: 24px;
+    padding: 3px 0;
+    border-bottom: 1px solid #BBB;
 }
 .l5r .item-list .item img {
-  flex: 0 0 24px;
-  margin-right: 5px;
+    flex: 0 0 24px;
+    margin-right: 5px;
 }
 .l5r .item-list .item-name {
-  margin: 0;
+    margin: 0;
 }
 .l5r .item-list .item-controls {
-  flex: 0 0 36px;
+    flex: 0 0 36px;
 }
 .l5r .attributes-header {
-  padding: 5px;
-  margin: 5px 0;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid #AAA;
-  border-radius: 2px;
-  text-align: center;
-  font-weight: bold;
+    padding: 5px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: bold;
 }
 .l5r .attributes-header .attribute-label {
-  flex: 1.5;
+    flex: 1.5;
 }
 .l5r .attributes-header .attribute-control {
-  flex: 0 0 20px;
+    flex: 0 0 20px;
 }
 .l5r .attributes-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .l5r .attributes-list li > * {
-  margin: 0 3px;
-  height: 28px;
-  line-height: 24px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #AAA;
+    margin: 0 3px;
+    height: 28px;
+    line-height: 24px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #AAA;
 }
 .l5r .attributes-list a.attribute-control {
-  flex: 0 0 20px;
-  text-align: center;
-  line-height: 28px;
-  border: none;
+    flex: 0 0 20px;
+    text-align: center;
+    line-height: 28px;
+    border: none;
 }
 .l5r.sheet.actor {
-  min-width: 560px;
-  min-height: 420px;
+    min-width: 560px;
+    min-height: 420px;
 }
 .l5r.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
+    min-width: 460px;
+    min-height: 400px;
 }
 
 
@@ -422,4 +426,89 @@
 .rollable:hover {
     text-shadow: 0 0 2px white;
     text-decoration: underline;
+}
+
+.l5r {
+    .tab-container {
+        padding: 12px;
+        height: 100%;
+        overflow: auto;
+    }
+    
+    .attribute-container {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    
+    .attribute-container:first-child {
+        margin-right: 4px;
+        margin-left: 0px;
+    }
+    
+    .attribute-container:last-child {
+        margin-left: 4px;
+        margin-right: 0px;
+    }
+    
+    .short-attribute-container {
+        flex: 0 0 $short-attribute-width;
+        margin-right: $short-attribute-width;
+        margin-left: $short-attribute-width;
+    }
+    
+    .short-attribute-container:first-child {
+        flex: 0 0 $short-attribute-width;
+        margin-right: $short-attribute-width;
+        margin-left: 0px;
+    }
+    
+    .short-attribute-container:last-child {
+        flex: 0 0 $short-attribute-width;
+        margin-right: 0px;
+        margin-left: $short-attribute-width;
+    }
+    
+    .adquisitions {
+        header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            h4 {
+                font-weight: bold;
+                text-align-last: center;
+            }
+
+            h4:first-child {
+                font-weight: bold;
+                text-align-last: left;
+            }
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+            padding: $attributes-margin;
+            
+            
+            .name {
+                margin-right: $attributes-margin;
+            }
+            
+            .xp {
+                flex: 0 0 64px;
+                margin-left: $attributes-margin;
+                margin-right: $attributes-margin;
+            }
+            
+            .rank {
+                flex: 0 0 64px;
+                margin-left: $attributes-margin;
+            }
+        }
+
+        .tools {
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+        }
+    }
+    
 }

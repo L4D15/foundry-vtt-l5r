@@ -14,7 +14,9 @@ export const preloadTemplates = async function() {
 		'systems/l5r/templates/item/weapon-entry.html',
 		'systems/l5r/templates/actor/feats.html',
 		'systems/l5r/templates/item/feat-sheet.html',
-		'systems/l5r/templates/item/feat-entry.html'
+		'systems/l5r/templates/item/feat-entry.html',
+		'systems/l5r/templates/actor/xp-tab.html',
+		'systems/l5r/templates/actor/xp-adquisition-entry.html'
 	];
 
 	return loadTemplates(templatePaths);

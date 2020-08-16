@@ -1,0 +1,34 @@
+<div class="tab-container">
+    <div class="flexrow" style="flex: 0 0 100px; justify-content: center;">
+        <div class="short-attribute-container">
+            <h4 class="attribute-label center">{{ localize 'L5R.XP.Total' }}</h4>
+            <input type="text" name="data.xp_total" value="{{ data.xp_total }}" data-dtype="Number" placeholder="0"/>
+        </div>
+        <div class="short-attribute-container">
+            <h4 class="attribute-label">{{ localize 'L5R.XP.Spent' }}</h4>
+            <input type="text" name="data.xp_spent" value="{{ data.xp_spent }}" data-dtype="Number" placeholder="0"/>
+        </div>
+        <div class="short-attribute-container">
+            <h4 class="attribute-label">{{ localize 'L5R.XP.Saved' }}</h4>
+            <input type="text" name="data.xp_saved" value="{{ data.xp_saved }}" data-dtype="Number" placeholder="0"/>
+        </div>
+    </div>
+    <div class="adquisitions">
+        <h4 class="section-header flexrow">{{ localize 'L5R.XP.Adquisitions'}}</h4>
+        <header class="flexrow row">
+            <h4 class="name">{{ localize 'L5R.Name' }}</h4>
+            <h4 class="xp">{{ localize 'L5R.XP.Spent' }}</h4>
+            <h4 class="rank">{{ localize 'L5R.Rank' }}</h4>
+        </header>
+
+        {{ log 'HTML Feats: '}}
+        {{ log data.feats }}
+
+        {{#each data.feats as |feat featId| }}
+            {{> systems/l5r/templates/actor/xp-adquisition-entry.html adquisition=feat }}
+        {{/each}}
+        <div class="tools">
+            <a class="adquisition-control adquisition-add" title="{{ localize 'L5R.Add'}}"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+</div>
