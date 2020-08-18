@@ -22,7 +22,16 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-
+            <div class="flexrow">
+                <div class="attribute-container">
+                    <label class="attribute-label">{{ localize 'L5R.XP.Spent' }}</label>
+                    <input type="text" name="data.xp_used" value="{{data.xp_used}}" data-dtype="Number" placeholder="0"/>
+                </div>
+                <div class="attribute-container">
+                    <label class="attribute-label">{{ localize 'L5R.Rank' }}</label>
+                    <input type="text" name="data.rank" value="{{data.rank}}" data-dtype="Number" placeholder="0"/>
+                </div>
+            </div>
         </div>
     </section>
 </form>

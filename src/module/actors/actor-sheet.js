@@ -13,13 +13,17 @@ export class L5RActorSheet extends ActorSheet {
     }
     
     getData() {
-        const data = super.getData();
+        const sheetData = super.getData();
+
+        this._prepareItems(sheetData);
+
+        const feats = sheetData.items.filter((item) => item.type === "feat");
+
+        sheetData.data.feats = feats;
         
-        this._prepareItems(data);
-        
-        return data;
+        return sheetData;
     }
-    
+
     /**
     * Update the actor.
     * @param event 
@@ -31,10 +35,10 @@ export class L5RActorSheet extends ActorSheet {
     
     /**
     * Prepare item data to be displayed in the actor sheet.
-    * @param actorData Data of the actor been displayed in the sheet.
+    * @param sheetData Data of the actor been displayed in the sheet.
     */
-    _prepareItems(actorData) {       
-        for (let item of actorData.items) {
+    _prepareItems(sheetData) {       
+        for (let item of sheetData.items) {
             if (item.type === "weapon") {
                 item.isWeapon = true;
                 item.isEquipment = true;
@@ -45,6 +49,9 @@ export class L5RActorSheet extends ActorSheet {
                 item.isEquipment = true;
             }
         }
+    }
+
+    _prepareFeats() {
     }
     
     /**
@@ -73,12 +80,10 @@ export class L5RActorSheet extends ActorSheet {
         });
         
         html.find('.feat-add').click(ev => {
-            console.log("Add feat clicked.");
             this._createFeat();
         });
         
         html.find('.feat-delete').click(ev => {
-            console.log("Remove feat clicked.");
             const li = $(ev.currentTarget).parents(".feat");
             const featId = li.data("featId");
             console.log("Remove feat" + featId + " clicked");
@@ -87,7 +92,6 @@ export class L5RActorSheet extends ActorSheet {
         });
         
         html.find('.feat-edit').click(ev => {
-            console.log("Edit feat clicked.");
             const li = $(ev.currentTarget).parents(".feat");
             const featId = li.data("featId");      
             const feat = this.actor.getOwnedItem(featId);
@@ -100,16 +104,27 @@ export class L5RActorSheet extends ActorSheet {
             
             this._onSkillClicked(skillId);
         });
+
+        html.find('.adquisition-add').click(ev => {
+            this._createFeat();
+        });
     }
     
     /**
     * Creates a new feat for the character and shows a window to edit it.
     */
     async _createFeat() {
-        const data = {name: game.i18n.localize('L5R.FeatPlaceholderName'), type: "feat"};
+        const data = {
+            name: game.i18n.localize('L5R.FeatPlaceholderName'),
+            type: "feat"
+        };
         const created = await this.actor.createEmbeddedEntity("OwnedItem", data);
         const feat = this.actor.getOwnedItem(created._id);
         
+        // Default values
+        //feat.rank = 1;
+        //feat.xp_used = 0;
+
         feat.sheet.render(true);
         
         return feat;

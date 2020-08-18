@@ -10,7 +10,6 @@ const ts = require('gulp-typescript');
 const less = require('gulp-less');
 const sass = require('gulp-sass');
 const git = require('gulp-git');
-const { link } = require('fs');
 
 const argv = require('yargs').argv;
 
@@ -169,6 +168,8 @@ async function copyFiles() {
 		'module.json',
 		'system.json',
 		'template.json',
+		'module',
+		'l5r.js'
 	];
 	try {
 		for (const file of statics) {
@@ -296,70 +297,6 @@ async function linkUserData() {
 				chalk.green(`Copying build to ${chalk.blueBright(linkDir)}`)
 			);
 			await fs.symlink(path.resolve('./dist'), linkDir);
-		}
-		return Promise.resolve();
-	} catch (err) {
-		Promise.reject(err);
-	}
-}
-
-/********************/
-/*		COPY		*/
-/********************/
-
-/**
- * Copy build to User Data folder
- */
-async function copyUserData() {
-	const name = path.basename(path.resolve('.'));
-	const config = fs.readJSONSync('foundryconfig.json');
-
-	let destDir;
-	try {
-		if (
-			fs.existsSync(path.resolve('.', 'dist', 'module.json')) ||
-			fs.existsSync(path.resolve('.', 'src', 'module.json'))
-		) {
-			destDir = 'modules';
-		} else if (
-			fs.existsSync(path.resolve('.', 'dist', 'system.json')) ||
-			fs.existsSync(path.resolve('.', 'src', 'system.json'))
-		) {
-			destDir = 'systems';
-		} else {
-			throw Error(
-				`Could not find ${chalk.blueBright(
-					'module.json'
-				)} or ${chalk.blueBright('system.json')}`
-			);
-		}
-
-		let linkDir;
-		if (config.dataPath) {
-			if (!fs.existsSync(path.join(config.dataPath, 'Data')))
-				throw Error('User Data path invalid, no Data directory found');
-
-			linkDir = path.join(config.dataPath, 'Data', destDir, name);
-		} else {
-			throw Error('No User Data path defined in foundryconfig.json');
-		}
-
-		if (fs.existsSync(linkDir)) {
-			console.log(chalk.white(`Removing ${chalk.blueBright(linkDir)}`));
-			await fs.rmdir(linkDir, { recursive: true });
-		}
-
-		if (argv.clean || argv.c) {
-			console.log(
-				chalk.yellow(`Removing build in ${chalk.blueBright(linkDir)}`)
-			);
-
-			await fs.remove(linkDir);
-		} else if (!fs.existsSync(linkDir)) {
-			console.log(
-				chalk.green(`Copying build to ${chalk.blueBright(linkDir)}`)
-			);
-			await fs.copy(path.resolve('./dist'), linkDir);
 		}
 		return Promise.resolve();
 	} catch (err) {
@@ -558,7 +495,6 @@ exports.build = gulp.series(clean, execBuild);
 exports.watch = buildWatch;
 exports.clean = clean;
 exports.link = linkUserData;
-exports.copy = copyUserData;
 exports.package = packageBuild;
 exports.update = updateManifest;
 exports.publish = gulp.series(
