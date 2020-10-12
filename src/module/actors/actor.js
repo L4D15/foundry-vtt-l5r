@@ -3,6 +3,12 @@
 * Extends the actor to process special things from L5R.
 */
 export class L5RActor extends Actor {
+
+    /** @override */
+    static async create(data, options={}) {
+        if(!Object.keys(data).includes("type")) data.type = "character";
+        await super.create(data, options);
+    }
     
     prepareData() {
         super.prepareData();
