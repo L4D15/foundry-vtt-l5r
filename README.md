@@ -14,3 +14,7 @@ You can install this game system by pasting the following URL in the "Install Sy
 ## Contribute
 
 Feel free to fork this project and create a merge request with any fixes or additions you want, just keep in mind not to infringe FFG's copyright.
+
+### Contributors
+
+- Carter#2703 (French localization)

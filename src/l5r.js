@@ -73,11 +73,6 @@ Hooks.once('setup', function() {
 /* ------------------------------------ */
 /* Actor Dialog                         */
 /* ------------------------------------ */
-ActorDirectory.prototype._onCreate = async (event) => {
-	event.preventDefault();
-	event.stopPropagation();
-	
-}
 
 /* ------------------------------------ */
 /* When ready							*/
