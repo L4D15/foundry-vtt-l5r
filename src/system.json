@@ -2,7 +2,7 @@
   "name": "l5r",
   "title": "Legend of the Five Rings (5E)",
   "description": "System for FFG's Legend of the Five Rings (5E). This is an early alpha version, some features are still missing.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "templateVersion": 2,
   "author": "L4D15",
   "authors": [
