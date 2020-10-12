@@ -2,7 +2,7 @@
   "name": "l5r",
   "title": "Legend of the Five Rings (5E)",
   "description": "System for FFG's Legend of the Five Rings (5E). This is an early alpha version, some features are still missing.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "templateVersion": 2,
   "author": "L4D15",
   "authors": [
@@ -36,7 +36,7 @@
   "gridDistance": 1,
   "gridUnits": "",
   "minimumCoreVersion": "0.6.0",
-  "compatibleCoreVersion": "0.6.5",
+  "compatibleCoreVersion": "0.7.3",
   "url": "https://github.com/L4D15/foundry-vtt-l5r",
   "manifest": "https://raw.githubusercontent.com/L4D15/foundry-vtt-l5r/master/src/system.json",
   "download": "https://github.com/L4D15/foundry-vtt-l5r/archive/master.zip",
