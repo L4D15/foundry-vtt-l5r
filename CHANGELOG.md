@@ -1,6 +1,10 @@
 Changelog
 -------------------
 
+### 0.2.5
+
+- Fix download URL pointing to an incomplete build.
+
 ### 0.2.4
 
 - Fix error preventing character creation in FoundryVTT 0.6.6.
